@@ -69,7 +69,7 @@ exports.updateProjects = async (req, res) => {
         type: type[i],
       };
       if (parentId[i] !== "") {
-        category.parentId = parentId[i];
+        project.parentId = parentId[i];
       }
 
       const updatedProjects = await Project.findOneAndUpdate(

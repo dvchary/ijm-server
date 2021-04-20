@@ -5,6 +5,9 @@ const masterSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  description: {
+    type: String,
+  },
   slug: {
     type: String,
     required: true,
@@ -24,4 +27,4 @@ const masterSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Project", masterSchema);
+module.exports = mongoose.model("Master", masterSchema);
