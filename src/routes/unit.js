@@ -34,7 +34,7 @@ router.post(
   "/unit/create",
   requireSignin,
   adminMiddleware,
-  uploadS3.array("unitPictures"),
+  // uploadS3.array("unitPictures"),
   createUnit
 );
 

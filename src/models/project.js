@@ -13,6 +13,9 @@ const masterSchema = new mongoose.Schema({
   type: {
     type: String,
   },
+  category: {
+    type: String,
+  },
   image: { type: String },
   parentId: {
     type: String,

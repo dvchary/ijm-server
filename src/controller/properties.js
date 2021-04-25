@@ -13,6 +13,7 @@ function createProperties(properties, parentId = null) {
     propertiesList.push({
       _id: prop._id,
       name: prop.name,
+      category: prop.category,
       slug: prop.slug,
       parentId: prop.parentId,
       type: prop.type,

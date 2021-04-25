@@ -14,29 +14,29 @@ const storage = multer.diskStorage({
   },
 });
 
-const accessKeyId = "AKIAYJR67FAKOD6XOCB7";
-const secretAccessKey = "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";
+// const accessKeyId = "AKIAYJR67FAKOD6XOCB7";
+// const secretAccessKey = "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";
 
-const s3 = new aws.S3({
-  accessKeyId,
-  secretAccessKey,
-});
+// const s3 = new aws.S3({
+//   accessKeyId,
+//   secretAccessKey,
+// });
 
 exports.upload = multer({ storage });
 
-exports.uploadS3 = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: "ijm-properties",
-    acl: "public-read",
-    metadata: function (req, file, cb) {
-      cb(null, { fieldName: file.fieldname });
-    },
-    key: function (req, file, cb) {
-      cb(null, shortid.generate() + "-" + file.originalname);
-    },
-  }),
-});
+// exports.uploadS3 = multer({
+//   storage: multerS3({
+//     s3: s3,
+//     bucket: "ijm-properties",
+//     acl: "public-read",
+//     metadata: function (req, file, cb) {
+//       cb(null, { fieldName: file.fieldname });
+//     },
+//     key: function (req, file, cb) {
+//       cb(null, shortid.generate() + "-" + file.originalname);
+//     },
+//   }),
+// });
 
 exports.requireSignin = (req, res, next) => {
   if (req.headers.authorization) {

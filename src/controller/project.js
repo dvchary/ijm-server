@@ -15,6 +15,7 @@ function createProjects(projects, parentId = null) {
     projectsList.push({
       _id: prj._id,
       name: prj.name,
+      category: prj.category,
       slug: prj.slug,
       parentId: prj.parentId,
       type: prj.type,
@@ -29,6 +30,7 @@ exports.addProject = (req, res) => {
   const projectObj = {
     name: req.body.name,
     slug: `${slugify(req.body.name)}-${shortid.generate()}`,
+    category: req.body.category,
     createdBy: req.user._id,
   };
 
